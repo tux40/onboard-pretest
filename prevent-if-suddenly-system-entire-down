@@ -1,3 +1,13 @@
-we must design infrasturcture high availabity 
+if suddenly the entire system was down, for trobleshooting the issue is :
+- Check every vm , running or shutdown
+- Check logging on OS 
+- Check Disk Of VM 
+- Check Network 
+- Check Host Of VM Utilitas
+
+
+
+for preventive issue system sudenly down , we must design infrasturcture high availabity 
 - Deploy Kubernetes Cluster With Multi DC / Region
 - or we must setup enviroment DC and DRC with standby mode (active - passive) 
+- Setup Tools Utitlas Monitoring like Grafana And Promethues etc
