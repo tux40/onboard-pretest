@@ -7,4 +7,4 @@
 - Check the ingress controller  all is running 
 # kubectl get all -n ingress-nginx
 
-- Pointing Domain From DNS Server To IP External Ingress Controller
+- Pointing Domain mydomain.com From DNS Server like (cloud dns , route 53 , cloudflare) To IP External Ingress Controller

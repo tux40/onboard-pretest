@@ -1,0 +1,60 @@
+###for wilcard certicate we use cert-manager
+- Install Cert Manager into cert-manager namespaces
+# kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.yaml
+
+- verifying the installation
+# kubectl get pods --namespace cert-manager
+
+- Create Issuer to test the webhook works okay
+
+#cat <<EOF > test-resources.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cert-manager-test
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: test-selfsigned
+  namespace: cert-manager-test
+spec:
+  selfSigned: {}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: selfsigned-cert
+  namespace: cert-manager-test
+spec:
+  dnsNames:
+    - example.com
+  secretName: selfsigned-cert-tls
+  issuerRef:
+    name: test-selfsigned
+EOF
+
+# kubectl apply -f test-resources.yaml
+
+- Check the status of the newly created certificate
+
+# kubectl describe certificate -n cert-manager-test
+
+...
+Spec:
+  Common Name:  example.com
+  Issuer Ref:
+    Name:       test-selfsigned
+  Secret Name:  selfsigned-cert-tls
+Status:
+  Conditions:
+    Last Transition Time:  2019-01-29T17:34:30Z
+    Message:               Certificate is up to date and has not expired
+    Reason:                Ready
+    Status:                True
+    Type:                  Ready
+  Not After:               2019-04-29T17:34:29Z
+Events:
+  Type    Reason      Age   From          Message
+  ----    ------      ----  ----          -------
+  Normal  CertIssued  4s    cert-manager  Certificate issued successfully

@@ -1,0 +1,3 @@
+we must design infrasturcture high availabity 
+- Deploy Kubernetes Cluster With Multi DC / Region
+- or we must setup enviroment DC and DRC with standby mode (active - passive) 

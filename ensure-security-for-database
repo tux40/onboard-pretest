@@ -1,0 +1,3 @@
+- setup database with ip private
+- allow connection from white list connection and deny from all
+- create user database for services (one service one user) and human with rbac 

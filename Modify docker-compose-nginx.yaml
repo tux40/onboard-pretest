@@ -1,0 +1,23 @@
+version: '3.8' 
+services:
+  nginx:
+    depends_on:
+      - web
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "3000:80"
+
+  web: 
+    build:
+    context: ./
+      target: runner
+      volumes:
+        - .:/app
+    command: npm run dev 
+    ports:
+      - "3000:3000" 
+    environment:
+      NODE_ENV: development
