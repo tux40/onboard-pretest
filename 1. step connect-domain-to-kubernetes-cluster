@@ -6,5 +6,5 @@
 
 - Check the ingress controller  all is running 
 # kubectl get all -n ingress-nginx
-https://github.com/tux40/onboard-pretest/issues/1#issue-1764611185
+
 - Pointing Domain From DNS Server To IP External Ingress Controller
