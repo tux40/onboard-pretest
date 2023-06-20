@@ -1,0 +1,10 @@
+- Create namespace ingress-nginx
+# kubectl create ns ingress-nginx
+
+- Install Nginx Ingress Controller
+# kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.0/deploy/static/provider/cloud/deploy.yaml
+
+- Check the ingress controller  all is running 
+# kubectl get all -n ingress-nginx
+
+- Pointing Domain From DNS Server To IP External Ingress Controller
