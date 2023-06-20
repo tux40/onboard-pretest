@@ -1,3 +1,7 @@
+Use DMZ 
+ 
+DMZ / demilitarized zone is a perimeter network that protects and adds an extra layer of security to an organization’s internal local-area network from untrusted traffic.
+
 DMZ networks have been central to securing global enterprise networks since the introduction of firewalls. They protect organizations’ sensitive data, systems, and resources by keeping internal networks separate from systems that could be targeted by attackers. DMZs also enable organizations to control and reduce access levels to sensitive systems.
 
 Enterprises are increasingly using containers and virtual machines (VMs) to isolate their networks or particular applications from the rest of their systems. The growth of the cloud means many businesses no longer need internal web servers. They have also migrated much of their external infrastructure to the cloud by using Software-as-a-Service (SaaS) applications. 
